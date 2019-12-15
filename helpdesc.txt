@@ -1,0 +1,35 @@
+https://riselab.ru/ustanovka-i-nastrojka-rabochej-sredy-homestead-dlya-laravel/
+
+https://laravel.ru/docs/v5/homestead
+
+https://www.kovzunov.com/2014/09/resheno-oshibka-vt-x-is-disabled-in-the-bios-pri-ustanovke-virtualnoj-mashiny/
+
+https://forums.xamarin.com/discussion/54479/vt-x-is-disabled-in-the-bios-for-both-all-cpu-modes-verr-vmx-msr-all-vmx-disabled#latest
+
+    - map: lara.test
+      to: /home/vagrant/code/laratest/public
+
+
+Чтобы сбросить вирт. машину к начальным настройкам: vagrant destroy
+
+Запуск вирт. машины: vagrant up
+
+После добавления в конфиг нового сайта делаем перезагрузку виртуальной машины: vagrant reload --provision
+
+Установить глобально laravel в вирт. машине: composer global require laravel/installer
+Добавить новый laravel проект: composer create-project --prefer-dist laravel/laravel laratest (в каталоге code)
+
+Удалить все из папки модулей rm -rf node_modules/
+
+Установить все пакеты: npm install --save-dev
+В windows: npm install --no-bin-links --save-dev
+
+Узнать локальную версию: npm list webpack
+Узнать глобальную версию: npm list webpack -g --depth 0
+Обновить вебпак: npm remove webpack -D && npm i webpack -D
+
+Если ошибка с babel/core: npm install --save-dev @babel/core
+
+Запуск сборки laravel-mix: yarn dev или npm run dev
+
+Подключить бутстрап: php artisan preset bootstrap
