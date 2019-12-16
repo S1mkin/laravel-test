@@ -68,3 +68,20 @@ sudo nano /etc/php/7.4/fpm/php.ini
 ; Production Value: Off
 ; http://php.net/short-open-tag
 short_open_tag = On
+
+
+клиент БД с вашей хост-машины, вы должны подключиться к 127.0.0.1 через порт 33060 (MySQL) или 54320 (Postgres). 
+Имя пользователя и пароль для обеих баз данных homestead / secret.
+
+php artisan migrate - создает миграционные таблицы в БД
+Сами миграции содержаться в каталоге /database/migrations
+
+php artisan migrate:fresh - удаляет таблицы из БД, если их нет в каталоге с миграциями
+
+php artisan migrate:refresh - пересобирает миграции
+
+php artisan make:migration create_tasks_table --create=tasks - создаст новую миграцию и вместе с ней таблицу в БД
+
+################### Создание контроллеров
+
+php artisan make:model Task
