@@ -7,7 +7,7 @@
     @foreach($tasks as $task)
         <div class="text-content">
             <div class="container-fluid">
-                <a href="/task/{{$task->id}}">{{$task->body}}</a>
+                <a href="{{ action('TasksController@detail', [$task->id]) }}">{{$task->body}}</a>
             </div>
         </div>
     @endforeach

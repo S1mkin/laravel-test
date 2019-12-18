@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('task/', 'Tasks@index');
-Route::get('task/{id}', 'Tasks@detail')->where('id', '[0-9]+');
+Route::get('task/', 'TasksController@index');
+Route::get('task/{id}', 'TasksController@detail')->where('id', '[0-9]+');
 
 
 /*

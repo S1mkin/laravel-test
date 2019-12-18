@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App;
 
-class Tasks extends Controller
+class TasksController extends Controller
 {
   /**
    * Показать все таски.
@@ -20,13 +20,14 @@ class Tasks extends Controller
     //$tasks = DB::table('tasks')->get();
     //$tasks = App\Task::show_all();
     $tasks = App\Task::all();
-    return view('task-index', compact('tasks'));
+    return view('page.task.index', compact('tasks'));
   }
 
   public function detail($id) 
   {
     $task = App\Task::find($id);
-    return view('task-detail', compact('task'));
+    if (is_null($task)) { abort(404); }
+    else return view('page.task.detail', compact('task'));
   }
 
 }
