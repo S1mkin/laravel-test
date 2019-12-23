@@ -38,12 +38,18 @@ https://forums.xamarin.com/discussion/54479/vt-x-is-disabled-in-the-bios-for-bot
 
 Подключить бутстрап: php artisan preset bootstrap
 
-######################################Если есть проблемы с стеью или nginx:
+######################################  Если есть проблемы с стеью или nginx:
+
+
+vagrant@homestead:~/code/laratest$ sudo service networking restart
+Failed to restart networking.service: Unit networking.service not found.
+
+
 
 Перезапустить сеть: sudo service networking restart
 Перезапустить nginx: service nginx restart
 
-Есил ошибка вида 2019/12/16 10:23:23 [crit] 4047#4047: *7 connect() to unix:/var/run/php/php7.4-fpm.sock failed (2: No such file or directory) wh$
+Если ошибка вида 2019/12/16 10:23:23 [crit] 4047#4047: *7 connect() to unix:/var/run/php/php7.4-fpm.sock failed (2: No such file or directory) wh$
 
 Если nginx 502
 
@@ -52,6 +58,9 @@ https://forums.xamarin.com/discussion/54479/vt-x-is-disabled-in-the-bios-for-bot
 sudo apt-get install php7.4-fpm
 sudo service nginx restart
 sudo service php7.4-fpm restart
+
+
+Если проблемы с DNS: то можно прописать сервер в файле /etc/resolv.conf
 
 В настройках 
 sudo nano /etc/php/7.4/fpm/php.ini 
