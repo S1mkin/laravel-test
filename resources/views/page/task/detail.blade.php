@@ -7,7 +7,7 @@
         <div class="text-content">
             <div class="container-fluid">
                 <p><b>Task body:</b> {{$task->body}}</p>
-                <p><a href="/task/">Return to list</a></p>
+                <p><a href="{{ action('TasksController@index') }}">Return to list</a></p>
             </div>
         </div>
 

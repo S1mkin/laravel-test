@@ -3,8 +3,8 @@
     @include('parts.head')
     <body>
         <div class="container">
-            <section id="main">
-                @include('parts.header')
+            @include('parts.header')
+            <section id="main">    
                 @yield ('content')
             </section>
         </div>
